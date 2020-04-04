@@ -13,7 +13,6 @@ export class PokemonListComponent implements OnInit {
   list: Object = null;
 
   ngOnInit() {
-    debugger;
     this.pokemonService.getPokemonList().subscribe(
       res => {
         this.list = res.cards;
