@@ -1,1 +1,4 @@
 <p>pokemon-list works!</p>
+<div *ngFor="let pokemon of list">
+    <p><a routerLink="detail/{{pokemon.id}}">{{pokemon.id}}</a> - {{pokemon.name}}</p>
+</div>
