@@ -1,2 +1,4 @@
 <p>pokemon-detail works!</p>
-<p *ngIf="pokemon">{{pokemon.id}} - {{pokemon.name}}</p>
+<div *ngIf="pokemon != null">
+    <p>{{pokemon.id}} - {{pokemon.name}}</p>
+</div>

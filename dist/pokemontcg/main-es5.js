@@ -91,7 +91,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>pokemon-detail works!</p>\n<p>{{pokemon.card.id}} - {{pokemon.card.name}}</p>";
+    __webpack_exports__["default"] = "<p>pokemon-detail works!</p>\n<p *ngIf=\"pokemon\">{{pokemon.id}} - {{pokemon.name}}</p>";
     /***/
   },
 
@@ -1101,7 +1101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.pokemonId = this.route.snapshot.paramMap.get("id");
           this.pokemonService.getPokemonDetail(this.pokemonId).subscribe(function (res) {
-            _this.pokemon = res;
+            _this.pokemon = res.card;
           }, function (err) {
             console.log(err);
           });

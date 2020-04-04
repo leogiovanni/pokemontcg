@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>pokemon-detail works!</p>\n<p>{{pokemon.card.id}} - {{pokemon.card.name}}</p>");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>pokemon-detail works!</p>\n<p *ngIf=\"pokemon\">{{pokemon.id}} - {{pokemon.name}}</p>");
 
 /***/ }),
 
@@ -543,8 +543,8 @@ let PokemonDetailComponent = class PokemonDetailComponent {
     }
     ngOnInit() {
         this.pokemonId = this.route.snapshot.paramMap.get("id");
-        this.pokemonService.getPokemonDetail(this.pokemonId).subscribe((res) => {
-            this.pokemon = res;
+        this.pokemonService.getPokemonDetail(this.pokemonId).subscribe(res => {
+            this.pokemon = res.card;
         }, err => {
             console.log(err);
         });
