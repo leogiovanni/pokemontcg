@@ -20,7 +20,7 @@ export class PokemonService {
   }
   
   getPokemonDetail(id: String){
-    return this.http.get<Object>(url+"cards/"+id)
+    return this.http.get<any>(url+"cards/"+id)
       .catch(this.errorHandler);    
   }
 
