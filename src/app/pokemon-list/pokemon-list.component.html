@@ -15,7 +15,7 @@
         <div class="list__pokemons__loading" *ngIf="loading">
             <img src="assets/imgs/loading.gif" class="loading" [hidden]="!loading">
         </div>
-        <ng-container *ngIf="(list | myfilter:search) as filteredList">
+        <ng-container *ngIf="(list | myfilter:search:'asc':'name') as filteredList">
             <div *ngFor="let pokemon of filteredList" class="list__pokemons__pokemon" (click)="details(pokemon.id)">
                 <div class="list__pokemons__pokemon__img">
                     <img src="{{pokemon.imageUrl}}"/>
