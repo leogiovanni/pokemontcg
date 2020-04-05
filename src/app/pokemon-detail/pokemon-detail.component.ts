@@ -12,7 +12,7 @@ export class PokemonDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private pokemonService: PokemonService) { }
 
-  pokemon: any = null;
+  pokemon = null;
   pokemonId: String = null;
 
   ngOnInit() {

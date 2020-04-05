@@ -40,7 +40,7 @@ export class PokemonListComponent implements OnInit {
 
   details(id){
     debugger
-    this.router.navigate(['details', id]);
+    this.router.navigate(['detail', id]);
   }
 
 }
