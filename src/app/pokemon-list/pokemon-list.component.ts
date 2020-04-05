@@ -39,8 +39,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   details(id){
-    debugger
     this.router.navigate(['detail', id]);
   }
-
 }

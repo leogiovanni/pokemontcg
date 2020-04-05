@@ -1,3 +1,32 @@
-<div class="details" *ngIf="pokemon">
-    <p>{{pokemon.id}} - {{pokemon.name}}</p>
+<div class="details">
+    <div class="details__loading" *ngIf="loading">
+        <img src="assets/imgs/loading.gif" class="loading" [hidden]="!loading">
+    </div>
+    <div class="details__center" *ngIf="!loading">
+        <div class="details__center__img">
+            <img src="{{pokemon.imageUrlHiRes}}"/>
+        </div>
+        <div class="details__center__name">
+            <span class="details__underline">ID:</span><span>&nbsp;{{pokemon.id}}</span> 
+            <span>&nbsp;|&nbsp;</span>
+            <span class="details__underline">Nome:</span><span>&nbsp;{{pokemon.name}}</span>
+        </div>
+        <div class="details__center__type" *ngIf="pokemon.types">
+            <span class="details__underline">Type:</span><span>&nbsp;{{pokemon.types}}</span>
+        </div>
+        <ng-container *ngIf="pokemon.attacks">
+            <div *ngFor="let attack of pokemon.attacks" class="details__center__attack">
+                <div class="details__center__attack__title">
+                    <span class="details__underline">Attack:</span>
+                </div>
+                <div class="details__center__attack__details">
+                    <span class="details__underline" *ngIf="attack.cost">Cost:</span><span>&nbsp;{{attack.cost}}</span> <br>
+                    <span class="details__underline" *ngIf="attack.name">Name:</span><span>&nbsp;{{attack.name}}</span> <br>
+                    <span class="details__underline" *ngIf="attack.damage">Damage:</span><span>&nbsp;{{attack.damage}}</span> <br>
+                    <span class="details__underline" *ngIf="attack.text">Desciption:</span><span>&nbsp;{{attack.text}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    
 </div>

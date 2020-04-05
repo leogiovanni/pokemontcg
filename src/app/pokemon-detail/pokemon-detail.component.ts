@@ -14,11 +14,13 @@ export class PokemonDetailComponent implements OnInit {
 
   pokemon: any = null;
   pokemonId: String = null;
+  loading: boolean =  true;
 
   ngOnInit() {
     this.pokemonId = this.route.snapshot.paramMap.get("id");
     this.pokemonService.getPokemonDetail(this.pokemonId).subscribe(
       res => {
+        this.loading = false;
         this.pokemon = res.card;
       },
       err =>{
@@ -26,5 +28,4 @@ export class PokemonDetailComponent implements OnInit {
       }
     );
   }
-
 }
