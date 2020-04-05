@@ -83,6 +83,23 @@ $hover-color: #f1f1f1;
             }
         }
 
+        &__resistances {
+            flex: 1;
+            border-bottom: 1px solid $border-color;
+            margin: auto;
+            padding: 20px 0;
+            width: 100%;
+            display: flex;
+
+            &__type{
+                flex: 1;
+            }
+
+            &__value {
+                flex: 1;
+            }
+        }
+
         &__weakness {
             flex: 1;
             border-bottom: 1px solid $border-color;

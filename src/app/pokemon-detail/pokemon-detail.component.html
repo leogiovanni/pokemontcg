@@ -30,6 +30,16 @@
                 </div>
             </div>
         </ng-container>
+        <ng-container *ngIf="pokemon.resistances">
+            <div class="details__center__resistances" *ngFor="let resistence of pokemon.resistances">
+                <div class="details__center__resistances__type">
+                    <span class="details__underline">Resistance:</span><span>&nbsp;{{resistence.type}}</span>
+                </div>
+                <div class="details__center__resistances__value">
+                    <span class="details__underline">Value:</span><span>&nbsp;{{resistence.value}}</span>
+                </div>
+            </div>
+        </ng-container>
         <ng-container *ngIf="pokemon.weaknesses">
             <div class="details__center__weakness" *ngFor="let wekness of pokemon.weaknesses">
                 <div class="details__center__weakness__type">
