@@ -12,7 +12,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService, private formBuilder: FormBuilder, private router: Router) { }
 
-  list: Object = null;
+  list: any = null;
   form: FormGroup;
   search: string = null;
   loading: boolean = true;
