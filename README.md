@@ -6,11 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 2. npm i --save @angular-devkit/build-angular
 
-3. npm i --save font-awesome angular-font-awesome
+3. npm i --save @angular/material@8.2.2 @angular/cdk@8.2.2
 
-4. npm i --save @angular/material @angular/cdk 
+4. npm i --save rxjs-compat
 
-5. npm i --save rxjs-compat
+5. npm install --save font-awesome angular-font-awesome
+
+6. ng add @angular/material
 
 ## Development server
 

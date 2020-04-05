@@ -1,4 +1,38 @@
-<p>pokemon-list works!</p>
-<div *ngFor="let pokemon of list">
-    <p><a routerLink="detail/{{pokemon.id}}">{{pokemon.id}}</a> - {{pokemon.name}}</p>
+<div class="list">
+    <div class="list__search">
+        <form [formGroup]="form" class="list__search__form">
+            <div class="list__search__form__input">
+                <mat-form-field appearance="outline"> 
+                    <input matInput placeholder="Filter by name" formControlName="search" autocomplete="off" (keyup)="onInputChange(form.value)">
+                    <mat-error>
+                        <span *ngIf="form.controls['search'].hasError('minlength')">Please enter at least 2 characters</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+    <div class="list__pokemons">
+        <div class="list__pokemons__loading" *ngIf="loading">
+            <img src="assets/imgs/loading.gif" class="loading" [hidden]="!loading">
+        </div>
+        <ng-container *ngIf="(list | myfilter:search) as filteredList">
+            <div *ngFor="let pokemon of filteredList" class="list__pokemons__pokemon" (click)="details(pokemon.id)">
+                <div class="list__pokemons__pokemon__img">
+                    <img src="{{pokemon.imageUrl}}"/>
+                </div>
+                <div class="list__pokemons__pokemon__name">
+                    <span>{{pokemon.name}}</span>
+                </div>
+                <div class="list__pokemons__pokemon__id">
+                    <span>{{pokemon.id}}</span> 
+                </div>
+                <div class="list__pokemons__pokemon__type">
+                    <span>{{pokemon.types}}</span>
+                </div>
+            </div>
+            <div *ngIf="filteredList.length < 1" class="list__pokemons__no-data"> 
+                  <span>No data found.</span>
+            </div>
+        </ng-container>
+    </div>
 </div>

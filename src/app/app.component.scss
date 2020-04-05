@@ -1,0 +1,27 @@
+.nav {
+    display: flex;
+    background: #000;
+    height: 60px;
+
+    &__option {
+        color: #fff;
+        padding-left: 10px;
+        text-decoration: none;
+        margin: auto 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer {
+    overflow: hidden;
+    padding: 50px 10px 30px 10px;
+    display: flex;
+
+    &__copyright {
+        font-size: 12px;
+        margin: auto;
+    }
+}
