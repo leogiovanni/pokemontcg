@@ -30,7 +30,7 @@
                     <span>{{pokemon.types}}</span>
                 </div>
             </div>
-            <div *ngIf="filteredList.length < 1" class="list__pokemons__no-data"> 
+            <div *ngIf="filteredList.length < 1 && !loading" class="list__pokemons__no-data"> 
                   <span>No data found.</span>
             </div>
         </ng-container>
